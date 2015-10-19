@@ -49,12 +49,18 @@ gulp.task('cordova:start-live-server:ios', function () {
         }));
 });
 
+gulp.task('cordova:copy-plist', function () {
+    return gulp.src(path.join(buildConfig.assetFolder, 'BoardZ-Info.plist'), { base: buildConfig.assetFolder })
+        .pipe(gulp.dest(path.join(buildConfig.targets.cordova, 'platforms', 'ios', 'BoardZ')));
+});
+
 gulp.task('cordova:watch:ios', function () {
    // gulp.start('dev:watch');
     runSequence('cordova:clean',
         'dist:default',
         'cordova:copy-source',
         'cordova:config-for-livereload',
+        'cordova:copy-plist',
         'cordova:build:ios',
         'cordova:start-live-server:ios',
         function () {
