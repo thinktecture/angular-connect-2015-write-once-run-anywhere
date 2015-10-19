@@ -51,7 +51,7 @@ gulp.task('cordova:start-live-server:ios', function () {
 
 gulp.task('cordova:copy-plist', function () {
     return gulp.src(path.join(buildConfig.assetFolder, 'BoardZ-Info.plist'), { base: buildConfig.assetFolder })
-        .pipe(gulp.dest(path.join(buildConfig.targets.cordova, 'platforms', 'ios', 'BoardZ')));
+        .pipe(gulp.dest(path.join(buildConfig.targets.cordovaFolder, 'platforms', 'ios', 'BoardZ')));
 });
 
 gulp.task('cordova:watch:ios', function () {
