@@ -7,13 +7,8 @@
      * @public
      * 
      * @param $injector
-     * @param {PlatformInformation} platformInformation
      */
-    function Camera($injector, platformInformation) {
-        if (platformInformation.isCordova()) {
-            return $injector.get('mobileCamera');
-        }
-
+    function Camera($injector) {
         return $injector.get('desktopCamera');
     }
 
