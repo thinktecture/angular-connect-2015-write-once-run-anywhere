@@ -1,0 +1,103 @@
+body {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	cursor: default;
+}
+
+/* Especially to disable nw.js bounce effect: https://github.com/nwjs/nw.js/issues/3109#issuecomment-105283351 */
+/*html, body {
+	height: 100%;
+	overflow: hidden;
+}
+*/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.main-header .logo {
+	font-family: -apple-system-font, "Helvetica Neue", HelveticaNeue, "Roboto", "Segoe WP", "Segoe UI", sans-serif;
+}
+
+body,
+.wrapper {
+	overflow-x: hidden;
+	position: relative;
+}
+
+.player-image {
+	height: 30px;
+	width: auto;
+	max-width: 100px;
+}
+
+[ui-view].ng-enter, [ui-view].ng-leave {
+	position: relative;
+	-webkit-transition:all .3s ease-in-out;
+	-moz-transition:all .3s ease-in-out;
+	-o-transition:all .3s ease-in-out;
+	transition:all .3s ease-in-out;
+}
+
+[ui-view].ng-enter {
+	opacity: 0;
+	-webkit-transform:translate3d(100px, 0, 0);
+	-moz-transform:translate3d(100px, 0, 0);
+	transform:translate3d(100px, 0, 0);
+}
+
+[ui-view].ng-enter-active {
+	opacity: 1;
+	-webkit-transform:translate3d(0, 0, 0);
+	-moz-transform:translate3d(0, 0, 0);
+	transform:translate3d(0, 0, 0);
+}
+
+[ui-view].ng-leave {
+	display: none;
+}
+
+#loading-bar .bar {
+	height: 1px;
+	border: none;
+	padding: 2px;
+}
+
+/*
+ * I currently don't like the calc idea here, but AdminLTE does a lot of calculations to set several "min-height"
+ * of elements. We could use the "fixed" option of AdminLTE, but that is not include a fixed footer as well
+ * as the content would still show a "jumping"-effect.
+ *
+ * So with the next to css selectors we'll do our own "fixed" layout. This may not be the best idea, but we do not want
+ * to change the app.js from AdminLTE removing the calculations. AdminLTE3 will later use Flexbox making a
+ * static footer/header super easy. But for now, this absolutely elegant (*cough*) solution works. :)
+ */
+.content-wrapper {
+	height: calc(100vh - 50px - 51px);
+	overflow-y: scroll;
+}
+
+@media only screen and (max-width: 768px) {
+	/*
+	 * When Admin LTE switches to mobile phone layout, there will be 2 50px height headers while to footer is still 51px
+	 */
+	.content-wrapper {
+		height: calc(100vh - 2 * 50px - 51px);
+	}
+}
+
+img.leaflet-tile {
+	/* work-around from here: https://github.com/CloudMade/Leaflet/issues/161 */
+	outline: 1px solid transparent;
+}
