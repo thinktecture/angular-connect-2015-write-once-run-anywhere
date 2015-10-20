@@ -1,4 +1,4 @@
-# Sample application for various “Cross-Platform HTML5 – in Action!” workshops
+# Sample application based on Angular 1.4, AdminLTE - with Cordova and nw.js
 
 ## Requirements
 * [NodeJS](http://nodejs.org) NodeJS
