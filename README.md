@@ -1,5 +1,7 @@
 # Sample application based on Angular 1.4, AdminLTE - with Cordova and nw.js
 
+Template for live coding is in [live-coding-template branch](https://github.com/thinktecture/angular-connect-2015-write-once-run-anywhere/tree/live-coding-template).
+
 ## Requirements
 * [NodeJS](http://nodejs.org) NodeJS
 * `npm i -g node-static` Installation of a web server
