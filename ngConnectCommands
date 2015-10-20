@@ -1,0 +1,65 @@
+Commands :-)
+
+1. cordova create cordova tt.net.boardz BoardZ
+
+2. cordova platform add ios android windows --save
+
+3. cordova plugin add cordova-plugin-whitelist cordova-plugin-statusbar cordova-plugin-splashscreen cordova-plugin-geolocation cordova-plugin-camera cordova-plugin-crosswalk-webview --save
+
+
+
+
+Code (-:
+
+
+packageJson:
+{
+  "name": "BoardZ!",
+  "version": "1.0.0",
+  "main": "www/index.html",
+  "window": {
+    "title": "BoardZ! Desktop",
+    "toolbar": false,
+    "resizable": true,
+    "fullscreen": false,
+    "width": 1024,
+    "height": 768
+  }
+}
+
+
+
+camera.js:
+function Camera($injector, platformInformation) {
+        if (platformInformation.isCordova()) {
+            return $injector.get('mobileCamera');
+        }
+
+        return $injector.get('desktopCamera');
+    }
+
+
+
+nativeMenu.js
+if (platformInformation.isNwjs()) {
+                var gui = require('nw.gui');
+
+                var nativeMenuBar = new gui.Menu({ type: 'menubar' });
+
+                if (process.platform === 'darwin') {
+                    nativeMenuBar.createMacBuiltin('BoardZ!');
+                }
+
+                var gamesListMenuItems = new gui.Menu();
+                gamesListMenuItems.append(new gui.MenuItem({ label: 'Show...' }));
+
+                nativeMenuBar.append(
+                    new gui.MenuItem({
+                        label: 'Games List',
+                        submenu: gamesListMenuItems
+                    })
+                );
+
+                var window = gui.Window.get();
+                window.menu = nativeMenuBar;
+            }
