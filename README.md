@@ -77,6 +77,7 @@ The gulp task will build iOS, Windows Phone, Android phone apps as well as deskt
   * [nw-builder](https://github.com/nwjs/nw-builder), builds NW.js apps for Mac OS X, Windows and Linux via CLI
 
 ## Additional Resources
+* [NW.js and Electron compared](http://tangiblejs.com/posts/nw-js-electron-compared)
 * [Cross-platform 2D and 3D visualizations](https://github.com/thinktecture/basta-herbst-2015-2d-3d)
 * [Offline-first architecture for HTML5 apps](https://speakerdeck.com/christianweyer/auch-ohne-netz-offline-first-architekturen-fur-html5-apps)
 * [Leightweight architecture with ASP.NET and SignalR](https://speakerdeck.com/christianweyer/fur-alle-leichtgewichtige-architekturen-mit-asp-dot-net-web-api-and-signalr)
