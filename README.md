@@ -23,7 +23,10 @@ Template for live coding is in [live-coding-template branch](https://github.com/
 The gulp task will build iOS, Windows Phone, Android phone apps as well as desktop apps for Mac OSX, Windows and Linux. To get it working, please do the following:
 
 * Only after cloning the repo: `npm i` within the root folder of this repository
-* Run `gulp dev:livereload` to start a live server, which is best when developing the app
+* Live reloads:
+  * Run `gulp dev:livereload` to start a live server, which is best when developing the app
+  * Run `gulp nwjs:watch` and within `nwjs`-folder `nw .` for nwjs live reloading
+  * Run `gulp cordova:watch:ios` and within the cordova folder `cordova run ios` for cordova live reloading (only works for iOS, not for Android or Windows Phone)
 * Run `gulp` to build all apps in release mode (will execute `gulp build:all:release`)
 * Debug Mode: Use the following gulp tasks to build the apps in debug mode
     * Run `gulp build:all` to build all apps in debug mode
