@@ -39,6 +39,10 @@ The gulp task will build iOS, Windows Phone, Android phone apps as well as deskt
     * Run `gulp cordova:release` to build all phone related apps
     * Run `gulp nwjs:release` to build all desktop related apps
 
+## Usage
+* To login just use username = password (eg. user: bob, password: bob). 
+* If you don't want to use the Azure Web API, you can run the server by yourself by starting the [BoardGame.Host](https://github.com/thinktecture/angular-connect-2015-write-once-run-anywhere/tree/master/src/BoardZApi) project with Visual Studio and [change the url](https://github.com/thinktecture/angular-connect-2015-write-once-run-anywhere/blob/master/src/BoardZ/app/init.js#L16) within the AngularJS app.
+
 ## Supported platforms
 * Any modern web browser (Chrome, Firefox, Edge, Safari) by simply hosting it
 * Mobile platforms (iOS, Android, Windows) by packaging the app using Cordova
