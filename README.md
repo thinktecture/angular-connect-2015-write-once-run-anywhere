@@ -41,7 +41,8 @@ The gulp task will build iOS, Windows Phone, Android phone apps as well as deskt
 
 ## Usage
 * To login just use username = password (eg. user: bob, password: bob). 
-* If you don't want to use the Azure Web API, you can run the server by yourself by starting the [BoardGame.Host](https://github.com/thinktecture/angular-connect-2015-write-once-run-anywhere/tree/master/src/BoardZApi) project with Visual Studio and [change the url](https://github.com/thinktecture/angular-connect-2015-write-once-run-anywhere/blob/master/src/BoardZ/app/init.js#L16) within the AngularJS app.
+* If you don't want to use the Azure Web API, you can run the server by yourself by starting the [BoardGame.Host](https://github.com/thinktecture/angular-connect-2015-write-once-run-anywhere/tree/master/src/BoardZApi) project with Visual Studio and [change the url](https://github.com/thinktecture/angular-connect-2015-write-once-run-anywhere/blob/master/src/BoardZ/app/init.js#L16) within the AngularJS app. The server will run on port 8080.
+* If starting the server leads into a TargetInvocationException, you'll need to add a url to your urlacl settings by executing the following command (on Windows :)) in an elevated command line: `netsh http add urlacl url=http://+:9090/ user=your_user_name`
 
 ## Supported platforms
 * Any modern web browser (Chrome, Firefox, Edge, Safari) by simply hosting it
