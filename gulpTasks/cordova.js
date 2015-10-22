@@ -76,9 +76,9 @@ gulp.task('cordova:watch:ios', function () {
 
 gulp.task('cordova:build:ios', function (done) {
     sh.cd(buildConfig.targets.cordovaFolder);
+    sh.exec('cordova prepare ios');
     sh.exec('cp -r "' + path.join('..', buildConfig.targets.resourcesFolder) + '" resources/');
     sh.exec('ionic resources');
-    sh.exec('cordova prepare ios');
     sh.exec('cordova build ios');
     sh.cd('..');
     done();
@@ -86,9 +86,9 @@ gulp.task('cordova:build:ios', function (done) {
 
 gulp.task('cordova:build:all', function (done) {
     sh.cd(buildConfig.targets.cordovaFolder);
+    sh.exec('cordova prepare');
     sh.exec('cp -r "' + path.join('..', buildConfig.targets.resourcesFolder) + '" resources/');
     sh.exec('ionic resources');
-    sh.exec('cordova prepare');
     sh.exec('cordova build');
     sh.cd('..');
     done();
